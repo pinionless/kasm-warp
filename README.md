@@ -1,7 +1,7 @@
 # kasm-warp
 Application build to run Warp terminal in KASM.
 # Known bugs
-Warp has issues when opend in full screen inside Kasm VM. That's why the container was set to leave 10px padding. App window will resize automatically when manipulated.
+Warp has issues when opend in full screen inside Kasm VM. That's why the container was set to leave 5px padding. App window will resize automatically when manipulated.
 
 # Details
 Base image: `kasmweb/core-ubuntu-focal:1.15.0`
@@ -9,6 +9,7 @@ Base image: `kasmweb/core-ubuntu-focal:1.15.0`
 Features:
 - Warp 2024.05.07.08.02.stable
 - sshpass
+- Nano
 - app window auto resize script
   
 # Installation:
