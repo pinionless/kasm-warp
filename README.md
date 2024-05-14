@@ -29,6 +29,8 @@ User : kasm_user Password: password
 - In the "Docker Registry" section paste `https://index.docker.io/v1/`
 - Configure other workspace settings like name, description, and resource allocation as needed.
 - Click "Save" to add the workspace.
+### Recomended: Add Persistent Profile Path
+`/profiles_folder/{image_id}/{user_id}`
 
 ## Get Warp auth link from:
 https://app.warp.dev/logged_in/
