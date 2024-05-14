@@ -20,8 +20,15 @@ The container is now accessible via a browser : https://IP_OF_SERVER:6901
 
 User : kasm_user Password: password
 
-## Kwam Workspaces
-Add new workspace
+## Kasm Workspaces
+- Log in to your Kasm Workspaces administration panel.
+- Navigate to the "Workspaces" section.
+- Click the "Add Workspace" button.
+- Select workspace type: "Container"
+- In the "Docker Image" section paste `registry.hub.docker.com/pinionless/kasm-warp:latest`
+- In the "Docker Registry" section paste `https://index.docker.io/v1/`
+- Configure other workspace settings like name, description, and resource allocation as needed.
+- Click "Save" to add the workspace.
 
 ## Get Warp auth link from:
 https://app.warp.dev/logged_in/
