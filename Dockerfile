@@ -7,6 +7,11 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 WORKDIR $HOME
 
 ######### Customize Container Here ###########
+ENV TOPMARGIN 50
+ENV RIGHTMARGIN 50
+ENV LEFTMARGIN 50
+ENV BOTTOMMARGIN 50
+
 RUN apt-get update && apt-get install -y \
     sshpass
 
@@ -22,9 +27,9 @@ COPY maximize_window_custom.sh $STARTUPDIR/maximize_window_custom.sh
 RUN chmod +x $STARTUPDIR/maximize_window_custom.sh
 RUN chmod 755 $STARTUPDIR/maximize_window_custom.sh
 
-COPY maximize_stop.sh $STARTUPDIR/maximize_stop.sh
-RUN chmod +x $STARTUPDIR/maximize_stop.sh
-RUN chmod 755 $STARTUPDIR/maximize_stop.sh
+COPY prevent_fullscreen.sh $STARTUPDIR/prevent_fullscreen.sh
+RUN chmod +x $STARTUPDIR/prevent_fullscreen.sh
+RUN chmod 755 $STARTUPDIR/prevent_fullscreen.sh
 
 RUN cp $HOME/.config/xfce4/xfconf/single-application-xfce-perchannel-xml/* $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/
 RUN cp /usr/share/backgrounds/bg_kasm.png /usr/share/backgrounds/bg_default.png

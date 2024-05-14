@@ -1,10 +1,6 @@
 # MAXIMIZE and MAXIMIZE_NAME are exported by the calling script
 # This script will check against the container OS to do the right thing.
 enable_x=0
-TOPMARGIN=10
-RIGHTMARGIN=10
-LEFTMARGIN=10
-BOTTOMMARGIN=10
 maximize_window(){
     set +e
     if [[ ${MAXIMIZE} == 'true' ]] ; then
@@ -18,9 +14,9 @@ maximize_window(){
             while [ $SECONDS -lt $end ]; do
                 SCREEN_WIDTH=$(xwininfo -root | awk '$1=="Width:" {print $2}')
                 SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
-                W=$(( $SCREEN_WIDTH - $RIGHTMARGIN - $LEFTMARGIN))
-                H=$(( $SCREEN_HEIGHT - $TOPMARGIN - $BOTTOMMARGIN))
-                wmctrl -x -a dev.warp.Warp.dev.warp.Warp && wmctrl -r :ACTIVE: -e 0,$TOPMARGIN,$LEFTMARGIN,$W,$H
+                WIDTH=$(( $SCREEN_WIDTH - $RIGHTMARGIN - $LEFTMARGIN))
+                HEIGHT=$(( $SCREEN_HEIGHT - $TOPMARGIN - $BOTTOMMARGIN))
+                wmctrl -x -a dev.warp.Warp.dev.warp.Warp && wmctrl -r :ACTIVE: -e 0,$TOPMARGIN,$LEFTMARGIN,$WIDTH,$HEIGHT
                 break;
                 sleep 1
             done

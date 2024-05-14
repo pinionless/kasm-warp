@@ -5,8 +5,6 @@ PGREP="Warp"
 export MAXIMIZE="true"
 export MAXIMIZE_NAME="Warp"
 MAXIMIZE_SCRIPT=$STARTUPDIR/maximize_window_custom.sh
-DEFAULT_ARGS=""
-ARGS=${APP_ARGS:-$DEFAULT_ARGS}
 options=$(getopt -o gau: -l go,assign,url: -n "$0" -- "$@") || exit
 eval set -- "$options"
 
@@ -40,7 +38,7 @@ kasm_exec() {
         /usr/bin/filter_ready
         /usr/bin/desktop_ready
         bash ${MAXIMIZE_SCRIPT} &
-        $START_COMMAND $ARGS $OPT_URL
+        $START_COMMAND $OPT_URL
     else
         echo "No URL specified for exec command. Doing nothing."
     fi
@@ -65,8 +63,8 @@ kasm_startup() {
                 /usr/bin/desktop_ready
                 set +e
                 bash ${MAXIMIZE_SCRIPT} &
-                bash $STARTUPDIR/maximize_stop.sh &
-                $START_COMMAND $ARGS $URL
+                bash $STARTUPDIR/prevent_fullscreen.sh &
+                $START_COMMAND $URL
                 set -e
             fi
             sleep 1
