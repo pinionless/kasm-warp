@@ -7,7 +7,7 @@ Warp has issues when opend in full screen inside Kasm VM. That's why the contain
 Base image: `kasmweb/core-ubuntu-focal:1.15.0`
 
 Features:
-- Warp 2024.05.07.08.02.stable
+- Warp 2024.05.28.08.02.stable
 - sshpass
 - Nano
 - app window auto resize script
