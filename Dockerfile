@@ -24,6 +24,11 @@ RUN apt-get update && \
     sudo dpkg -i warp-terminal_0.2024.05.28.08.02.stable.00_amd64.deb && \ 
     rm -rf warp-terminal_0.2024.05.28.08.02.stable.00_amd64.deb
 
+RUN cd /home/kasm-user && \
+    mkdir .fonts
+
+COPY fonts/* /home/kasm-user/.fonts
+
 RUN chmod +x $STARTUPDIR/custom_startup.sh && \
     chmod 755 $STARTUPDIR/custom_startup.sh && \
     chmod +x $STARTUPDIR/maximize_window_custom.sh && \
