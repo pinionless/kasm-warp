@@ -26,8 +26,8 @@ User : kasm_user Password: password
 - Navigate to the "Workspaces" section.
 - Click the "Add Workspace" button.
 - Select workspace type: "Container"
-- In the "Docker Image" section paste `registry.hub.docker.com/pinionless/kasm-warp:latest`
-- In the "Docker Registry" section paste `https://index.docker.io/v1/`
+- In the "Docker Image" section paste `ghcr.io/pinionless/kasm-warp:latest`
+- In the "Docker Registry" section paste `https://ghcr.io`
 - Configure other workspace settings like name, description, and resource allocation as needed.
 - Click "Save" to add the workspace.
 ### Recomended: Add Persistent Profile Path
