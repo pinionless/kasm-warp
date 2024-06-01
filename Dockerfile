@@ -7,10 +7,10 @@ ENV INST_SCRIPTS $STARTUPDIR/install
 WORKDIR $HOME
 
 ######### Customize Container Here ###########
-ENV TOPMARGIN 5
-ENV RIGHTMARGIN 5
-ENV LEFTMARGIN 5
-ENV BOTTOMMARGIN 5
+ENV TOPMARGIN 2
+ENV RIGHTMARGIN 2
+ENV LEFTMARGIN 2
+ENV BOTTOMMARGIN 8
 
 COPY custom_startup.sh $STARTUPDIR/custom_startup.sh
 COPY maximize_window_custom.sh $STARTUPDIR/maximize_window_custom.sh
@@ -20,9 +20,9 @@ RUN apt-get update && \
     apt-get install -y sshpass && \
     apt-get install -y nano && \
     cd $HOME/Desktop/ && \
-    wget https://releases.warp.dev/stable/v0.2024.05.07.08.02.stable_02/warp-terminal_0.2024.05.07.08.02.stable.02_amd64.deb && \
-    sudo dpkg -i warp-terminal_0.2024.05.07.08.02.stable.02_amd64.deb && \ 
-    rm -rf warp-terminal_0.2024.05.07.08.02.stable.02_amd64.deb
+    wget https://releases.warp.dev/stable/v0.2024.05.28.08.02.stable_00/warp-terminal_0.2024.05.28.08.02.stable.00_amd64.deb && \
+    sudo dpkg -i warp-terminal_0.2024.05.28.08.02.stable.00_amd64.deb && \ 
+    rm -rf warp-terminal_0.2024.05.28.08.02.stable.00_amd64.deb
 
 RUN chmod +x $STARTUPDIR/custom_startup.sh && \
     chmod 755 $STARTUPDIR/custom_startup.sh && \
