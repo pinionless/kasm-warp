@@ -10,7 +10,7 @@ WORKDIR $HOME
 ENV TOPMARGIN 2
 ENV RIGHTMARGIN 2
 ENV LEFTMARGIN 2
-ENV BOTTOMMARGIN 8
+ENV BOTTOMMARGIN 2
 
 COPY custom_startup.sh $STARTUPDIR/custom_startup.sh
 COPY maximize_window_custom.sh $STARTUPDIR/maximize_window_custom.sh
